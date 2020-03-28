@@ -8,4 +8,4 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     return a.exec();
-}//Olli hat nur ein EI
+}//Olli hat drei Eier
