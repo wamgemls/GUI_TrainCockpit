@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->p
+
+
     getDataButton = new QPushButton("GetData", this);
     getDataButton->setGeometry(100, 100, 100, 50);
 
@@ -68,4 +72,19 @@ void MainWindow::getDataFromSharedDataObject()
     //qDebug() << "Gelesen: x = " << d.x << " , y = " << d.y;
     xDataLabel->setNum(d.x);
     yDataLabel->setNum(d.y);
+}
+
+
+void MainWindow::on_pushButton_Add_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_Clear_clicked()
+{
+
+}
+
+void MainWindow::plot(){
+
 }

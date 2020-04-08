@@ -19,6 +19,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
+    void addPoint(double x, double y);
+    void cleardata();
+    void plot();
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -32,6 +37,10 @@ private:
     QLabel *yDataLabel;
     QSlider *ThrottleSlider;
 
+    QVector<double> qv_x,qv_y;
+
+
+
     Worker worker; //Objekt der eigenen Klasse
     QThread thread_for_worker; // QThread-Objekt
     Shared_Data_Container theSharedDataContainer;
@@ -39,5 +48,9 @@ private:
 private slots:
     void getDataFromSharedDataObject();
 
+
+
+    void on_pushButton_Add_clicked();
+    void on_pushButton_Clear_clicked();
 };
 #endif // MAINWINDOW_H
