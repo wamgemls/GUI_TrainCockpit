@@ -7,6 +7,7 @@
 #include "worker.h"
 #include <QThread>
 #include "shared_data_container.h"
+#include <QSlider>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +29,7 @@ private:
     QPushButton *quitButton;
     QLabel *xDataLabel;
     QLabel *yDataLabel;
+    QSlider *ThrottleSlider;
 
     Worker worker; //Objekt der eigenen Klasse
     QThread thread_for_worker; // QThread-Objekt

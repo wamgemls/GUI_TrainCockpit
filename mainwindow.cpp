@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     yDataLabel = new QLabel(this);
     yDataLabel->setGeometry(100, 250, 100, 50);
 
+    ThrottleSlider = new QSlider(this);
+    ThrottleSlider->setGeometry(300,400,100,50);
 
 
     // dem Worker-Objekt den Zeiger auf das gemeinsame Shared_Data_Container-Objekt geben:
