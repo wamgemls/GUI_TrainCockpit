@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,12 +19,14 @@ SOURCES += \
     data.cpp \
     main.cpp \
     mainwindow.cpp \
+    qcustomplot.cpp \
     shared_data_container.cpp \
     worker.cpp
 
 HEADERS += \
     data.h \
     mainwindow.h \
+    qcustomplot.h \
     shared_data_container.h \
     worker.h
 

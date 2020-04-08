@@ -8,6 +8,7 @@
 #include <QThread>
 #include "shared_data_container.h"
 #include <QSlider>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
