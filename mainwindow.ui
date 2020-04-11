@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>573</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="font">
@@ -22,10 +22,10 @@
    <widget class="QCustomPlot" name="customPlot" native="true">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
-      <width>291</width>
-      <height>191</height>
+      <x>1080</x>
+      <y>10</y>
+      <width>821</width>
+      <height>621</height>
      </rect>
     </property>
    </widget>
@@ -81,7 +81,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>821</width>
+     <width>1920</width>
      <height>20</height>
     </rect>
    </property>
