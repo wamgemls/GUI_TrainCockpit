@@ -19,13 +19,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QCustomPlot" name="customPlot" native="true">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>260</y>
-      <width>201</width>
-      <height>161</height>
+      <y>230</y>
+      <width>291</width>
+      <height>191</height>
      </rect>
     </property>
    </widget>
@@ -88,6 +88,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
