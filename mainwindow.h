@@ -9,6 +9,16 @@
 #include "shared_data_container.h"
 #include <QSlider>
 #include "qcustomplot.h"
+#include <QQuickWidget>
+#include <QtNetwork>
+#include <QtCore/QTextStream>
+#include <QtGui/QGuiApplication>
+#include <QtQml/QQmlApplicationEngine>
+#include <QtQuick/QQuickItem>
+
+#include <QSslSocket>
+
+#include <QQmlContext>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

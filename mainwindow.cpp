@@ -6,11 +6,16 @@
 #include <QMessageBox>
 #include <QMetaEnum>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->quickWidget->rootContext()->setContextProperty("mainWidget",this);
+    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
+
+    ui->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
     setupDemo(10);
 
