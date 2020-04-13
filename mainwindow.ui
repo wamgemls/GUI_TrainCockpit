@@ -29,59 +29,39 @@
      </rect>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="doubleSpinBox">
+   <widget class="QPushButton" name="startworker">
     <property name="geometry">
      <rect>
-      <x>950</x>
-      <y>740</y>
-      <width>62</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
-    <property name="geometry">
-     <rect>
-      <x>860</x>
-      <y>760</y>
-      <width>62</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_Clear">
-    <property name="geometry">
-     <rect>
-      <x>880</x>
-      <y>650</y>
+      <x>1810</x>
+      <y>860</y>
       <width>80</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Clear</string>
+     <string>start worker</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_getdata">
+   <widget class="QPushButton" name="getdata">
     <property name="geometry">
      <rect>
-      <x>1130</x>
-      <y>890</y>
+      <x>1810</x>
+      <y>830</y>
       <width>80</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Getdata2</string>
+     <string>Getdata</string>
     </property>
    </widget>
    <widget class="QQuickWidget" name="quickWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>530</y>
-      <width>551</width>
-      <height>481</height>
+      <x>10</x>
+      <y>10</y>
+      <width>1041</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="resizeMode">
@@ -91,11 +71,63 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>1080</x>
+      <x>1560</x>
       <y>640</y>
       <width>341</width>
       <height>171</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="closeworker">
+    <property name="geometry">
+     <rect>
+      <x>1810</x>
+      <y>890</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>close worker</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label1">
+    <property name="geometry">
+     <rect>
+      <x>1730</x>
+      <y>830</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>data1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label2">
+    <property name="geometry">
+     <rect>
+      <x>1730</x>
+      <y>850</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>data2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quitbutton">
+    <property name="geometry">
+     <rect>
+      <x>1810</x>
+      <y>920</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
     </property>
    </widget>
   </widget>
