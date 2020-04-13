@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
+
 #include <QDesktopWidget>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,12 +16,31 @@ MainWindow::MainWindow(QWidget *parent)
     ui->quickWidget->rootContext()->setContextProperty("mainWidget",this);
     ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
 
-    ui->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-
     setupDemo(10);
 
-    getDataButton = new QPushButton("GetData", this);
-    getDataButton->setGeometry(100, 100, 100, 50);
+
+    /*QStringList services = QGeoPositionInfoSource::availableSources();
+
+    if (services.isEmpty()) {
+
+        ui->textEdit->setText("positioning sources unavailable");
+        //timer->start(1000);
+        return;
+    }else{
+
+        ui->textEdit->setText("Läuft!");
+
+        QString str = services.join(", ");
+        ui->textEdit->setText(str);
+    }
+
+    source = new QNmeaPositionInfoSource(QNmeaPositionInfoSource::RealTimeMode);
+
+    //source->setDevice(serialnmea);*/
+
+
+    //getDataButton = new QPushButton("GetData", this);
+
 
     startWorkerButton = new QPushButton("Start Worker Thread", this);
     startWorkerButton->setGeometry(400, 100, 200, 50);
@@ -64,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Stoppen des Workers (Thread läuft aber weiter)
     connect(stopWorkerButton, SIGNAL(clicked()), &worker, SLOT(stopWorking()));
 
-    connect(getDataButton, SIGNAL(clicked()), this, SLOT(getDataFromSharedDataObject()));
+    connect(ui->pushButton_getdata, SIGNAL(clicked()), this, SLOT(getDataFromSharedDataObject()));
 
 }
 

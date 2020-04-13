@@ -1,4 +1,4 @@
-QT       += core gui printsupport quickwidgets network positioning location
+QT       += core gui printsupport quickwidgets network positioning location core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

@@ -15,10 +15,12 @@
 #include <QtGui/QGuiApplication>
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQuick/QQuickItem>
-
 #include <QSslSocket>
-
+#include <QNmeaPositionInfoSource>
 #include <QQmlContext>
+#include <QIODevice>
+#include <QTimer>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -69,6 +71,7 @@ private:
 
 
 
+
     Worker worker; //Objekt der eigenen Klasse
     QThread thread_for_worker; // QThread-Objekt
     Shared_Data_Container theSharedDataContainer;
@@ -79,20 +82,29 @@ private:
     QCPItemTracer *itemDemoPhaseTracer;
     int currentDemoIndex;
 
+
+    QGeoPositionInfoSource *source;
+    QTimer* timer;
+    QNmeaPositionInfoSource *nmeaLocation;
+
+
+
 private slots:
+
+    //void setupGPS();
+    //void errorPositioning(QGeoPositionInfoSource::Error er);
+    //void positionUpdated(const QGeoPositionInfo &info);
+
+
     void getDataFromSharedDataObject();
-
-
-
-    void on_pushButton_Add_clicked();
-    void on_pushButton_Clear_clicked();
-
 
 
     void realtimeDataSlot();
     void bracketDataSlot();
     void screenShot();
     void allScreenShots();
+
+
 
 
 
