@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>map.qml</file>
+        <file>tacho.qml</file>
     </qresource>
 </RCC>

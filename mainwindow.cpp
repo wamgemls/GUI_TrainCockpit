@@ -16,6 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->quickWidget->rootContext()->setContextProperty("mainWidget",this);
     ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
 
+    ui->quickWidget2->rootContext()->setContextProperty("mainWidget",this);
+    ui->quickWidget2->setSource(QUrl(QStringLiteral("qrc:/tacho.qml")));
+
+
     setupDemo(10);
 
 
