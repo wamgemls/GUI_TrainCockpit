@@ -46,7 +46,7 @@ Item {
     Map {
         id: map
         anchors.fill: parent
-        plugin: mapboxgl
+        plugin: esri
 
         center {
             latitude: 49.013611
