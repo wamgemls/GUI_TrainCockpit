@@ -6,7 +6,7 @@
 #include <QMessageBox>
 #include <QMetaEnum>
 
-
+double erstezahl;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,6 +21,27 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     setupDemo(10);
+
+    connect(ui->pushButton_0,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_1,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_2,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_3,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_4,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_5,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_6,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_7,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_8,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+    connect(ui->pushButton_9,SIGNAL(released()), this, SLOT(zahl_eingabe()));
+
+    connect(ui->pushButton_add,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_sub,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_mul,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_div,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+
+    ui->pushButton_add->setCheckable(true);
+    ui->pushButton_sub->setCheckable(true);
+    ui->pushButton_mul->setCheckable(true);
+    ui->pushButton_div->setCheckable(true);
 
 
     /*QStringList services = QGeoPositionInfoSource::availableSources();
@@ -85,6 +106,101 @@ void MainWindow::getDataFromSharedDataObject()
     ui->label1->setNum(d.x);
     ui->label2->setNum(d.y);
 }
+
+
+void MainWindow::zahl_eingabe()
+{
+    QPushButton * button = (QPushButton*)sender();
+
+    double label;
+    QString newlabel;
+
+    if(ui->pushButton_add->isChecked() || ui->pushButton_sub->isChecked() || ui->pushButton_mul->isChecked() || ui->pushButton_div->isChecked())
+    {
+        label = button->text().toDouble();
+
+        newlabel = QString::number(label,'g',15);
+    }
+    else
+    {
+        if (ui->label->text().contains('.') && button->text() == "0")
+        {
+            newlabel = ui->label->text() + button->text();
+        }
+        else
+        {
+            label = (ui->label->text() + button->text()).toDouble();
+            newlabel = QString::number(label,'g',15);
+        }
+    }
+
+    ui->label->setText(newlabel);
+}
+
+void MainWindow::on_pushButton_dot_released()
+{
+    ui->label->setText( ui->label->text() + ".");
+}
+
+void MainWindow::on_pushButton_clear_released()
+{
+    ui->pushButton_add->setChecked(false);
+    ui->pushButton_sub->setChecked(false);
+    ui->pushButton_mul->setChecked(false);
+    ui->pushButton_div->setChecked(false);
+
+
+
+    ui->label->setText("0");
+}
+
+void MainWindow::on_pushButton_exe_released()
+{
+    double erg, zweitezahl;
+    QString newlabel;
+
+    zweitezahl = ui->label->text().toDouble();
+
+    if(ui->pushButton_add->isChecked())
+    {
+        erg = erstezahl + zweitezahl;
+        newlabel = QString::number(erg, 'g', 15);
+        ui->label->setText(newlabel);
+        ui->pushButton_add->setChecked(false);
+    }
+    else if(ui->pushButton_sub->isChecked())
+    {
+        erg = erstezahl - zweitezahl;
+        newlabel = QString::number(erg, 'g', 15);
+        ui->label->setText(newlabel);
+        ui->pushButton_sub->setChecked(false);
+    }
+    else if(ui->pushButton_mul->isChecked())
+    {
+        erg = erstezahl * zweitezahl;
+        newlabel = QString::number(erg, 'g', 15);
+        ui->label->setText(newlabel);
+        ui->pushButton_mul->setChecked(false);
+    }
+    else if(ui->pushButton_div->isChecked())
+    {
+        erg = erstezahl / zweitezahl;
+        newlabel = QString::number(erg, 'g', 15);
+        ui->label->setText(newlabel);
+        ui->pushButton_div->setChecked(false);
+    }
+
+}
+
+void MainWindow::binary_operation_pressed()
+{
+    QPushButton * button = (QPushButton*)sender();
+
+    erstezahl = ui->label->text().toDouble();
+
+    button->setChecked(true);
+}
+
 
 void MainWindow::setupDemo(int demoIndex)
 {

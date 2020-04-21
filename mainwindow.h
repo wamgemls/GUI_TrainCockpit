@@ -104,6 +104,12 @@ private slots:
     void screenShot();
     void allScreenShots();
 
+    void zahl_eingabe();
+    void on_pushButton_dot_released();
+    void on_pushButton_clear_released();
+    void on_pushButton_exe_released();
+    void binary_operation_pressed();
+
 
 
 
