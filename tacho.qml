@@ -7,12 +7,15 @@ Item {
         id: circularGauge
         x: 216
         y: 136
+        value: 0
     }
 
     Slider {
         id: slider
         x: 220
         y: 392
+        stepSize: 1
+        to: 100
         value: 0.5
     }
 

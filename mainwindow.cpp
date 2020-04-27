@@ -7,6 +7,7 @@
 #include <QMetaEnum>
 
 double erstezahl;
+bool user_gibt_zweite_zahl_ein = false;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -115,9 +116,11 @@ void MainWindow::zahl_eingabe()
     double label;
     QString newlabel;
 
-    if(ui->pushButton_add->isChecked() || ui->pushButton_sub->isChecked() || ui->pushButton_mul->isChecked() || ui->pushButton_div->isChecked())
+    if((ui->pushButton_add->isChecked() || ui->pushButton_sub->isChecked() || ui->pushButton_mul->isChecked() || ui->pushButton_div->isChecked()) && (!user_gibt_zweite_zahl_ein))
     {
         label = button->text().toDouble();
+
+        user_gibt_zweite_zahl_ein = true;
 
         newlabel = QString::number(label,'g',15);
     }
@@ -148,8 +151,6 @@ void MainWindow::on_pushButton_clear_released()
     ui->pushButton_sub->setChecked(false);
     ui->pushButton_mul->setChecked(false);
     ui->pushButton_div->setChecked(false);
-
-
 
     ui->label->setText("0");
 }
@@ -189,7 +190,7 @@ void MainWindow::on_pushButton_exe_released()
         ui->label->setText(newlabel);
         ui->pushButton_div->setChecked(false);
     }
-
+    user_gibt_zweite_zahl_ein = false;
 }
 
 void MainWindow::binary_operation_pressed()
