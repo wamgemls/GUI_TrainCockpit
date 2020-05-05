@@ -4,10 +4,21 @@ import QtQuick.Controls 2.13
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 
+
+
+
+
+
 Item {
     id: element
+
+
+
+
     Rectangle {
         id: rectangle
+
+        anchors.fill: parent
         x: 0
         y: 0
         width: 640
@@ -27,6 +38,8 @@ Item {
         }
     }
 
+    //Slider.pressed: {circularGauge.value=slider.value}
+
     CircularGauge {
         id: circularGauge
         x: 52
@@ -36,7 +49,8 @@ Item {
         layer.textureSize.height: 1
         layer.textureSize.width: 1
         layer.smooth: false
-        value: 0
+        value: slider.value
+
     }
 
     Slider {
@@ -46,13 +60,17 @@ Item {
         width: 400
         scale: 1
         rotation: 270
+        from: -145
         stepSize: 1
-        to: 100
-        value: 0.5
+        to: 145
+
     }
 
 
+
 }
+
+
 
 /*##^##
 Designer {
