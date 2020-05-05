@@ -5,10 +5,6 @@ import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 
 
-
-
-
-
 Item {
     id: element
 
@@ -38,8 +34,6 @@ Item {
         }
     }
 
-    //Slider.pressed: {circularGauge.value=slider.value}
-
     CircularGauge {
         id: circularGauge
         x: 52
@@ -50,6 +44,8 @@ Item {
         layer.textureSize.width: 1
         layer.smooth: false
         value: slider.value
+        minimumValue: 0
+        maximumValue: 200
 
     }
 
@@ -60,9 +56,10 @@ Item {
         width: 400
         scale: 1
         rotation: 270
-        from: -145
+        from: 0
         stepSize: 1
-        to: 145
+        to: 200
+        value: 0
 
     }
 
