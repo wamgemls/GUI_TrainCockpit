@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     setupDemo(10);
-
+    //Taschenrechner ...
     connect(ui->pushButton_0,SIGNAL(released()), this, SLOT(zahl_eingabe()));
     connect(ui->pushButton_1,SIGNAL(released()), this, SLOT(zahl_eingabe()));
     connect(ui->pushButton_2,SIGNAL(released()), this, SLOT(zahl_eingabe()));
@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_sub->setCheckable(true);
     ui->pushButton_mul->setCheckable(true);
     ui->pushButton_div->setCheckable(true);
-
+    // ...  Taschenrechner
 
     /*QStringList services = QGeoPositionInfoSource::availableSources();
 
@@ -108,21 +108,21 @@ void MainWindow::getDataFromSharedDataObject()
     ui->label2->setNum(d.y);
 }
 
-
+// Taschenrechner ...
 void MainWindow::zahl_eingabe()
 {
-    QPushButton * button = (QPushButton*)sender();
+    QPushButton* button = (QPushButton*)sender();
 
-    double label;
+    double labeltext;
     QString newlabel;
 
     if((ui->pushButton_add->isChecked() || ui->pushButton_sub->isChecked() || ui->pushButton_mul->isChecked() || ui->pushButton_div->isChecked()) && (!user_gibt_zweite_zahl_ein))
     {
-        label = button->text().toDouble();
+        labeltext = button->text().toDouble();
 
         user_gibt_zweite_zahl_ein = true;
 
-        newlabel = QString::number(label,'g',15);
+        newlabel = QString::number(labeltext,'g',15);
     }
     else
     {
@@ -132,8 +132,8 @@ void MainWindow::zahl_eingabe()
         }
         else
         {
-            label = (ui->label->text() + button->text()).toDouble();
-            newlabel = QString::number(label,'g',15);
+            labeltext = (ui->label->text() + button->text()).toDouble();
+            newlabel = QString::number(labeltext,'g',15);
         }
     }
 
@@ -195,13 +195,13 @@ void MainWindow::on_pushButton_exe_released()
 
 void MainWindow::binary_operation_pressed()
 {
-    QPushButton * button = (QPushButton*)sender();
+    QPushButton* button = (QPushButton*)sender();
 
     erstezahl = ui->label->text().toDouble();
 
     button->setChecked(true);
 }
-
+// ... Taschenrechner
 
 void MainWindow::setupDemo(int demoIndex)
 {
